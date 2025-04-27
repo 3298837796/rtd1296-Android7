@@ -1,7 +1,7 @@
 # rtd1296-Android7
 **准备工作**
 
-  下载docker编译环境 [Docker Hub](https://hub.docker.com/repository/docker/3298837796/android7)
+  下载docker编译环境 [Docker Hub](https://hub.docker.com/r/3298837796/android7/tags)
 
   下载源码zip包并导入到docker容器内
 
