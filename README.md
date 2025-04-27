@@ -1,21 +1,33 @@
-# BPI-1296-Android7
-**Prepare**
+# rtd1296-Android7
+**准备工作**
 
+  下载docker编译环境 [Docker Hub](https://hub.docker.com/repository/docker/3298837796/android7)
 
-Get the docker image from [Sinovoip Docker Hub](https://hub.docker.com/r/sinovoip/bpi-build-android-7),  Build the android source with this docker environment.
+  下载源码zip包并导入到docker容器内
 
+  使用ssh 连接android7编译容器
+  
 ---------
-**Build**
+**编译**
 
-Build LK
+编译LK
 
     $ cd LK
     $ ./build_rtk_lk.sh rtd1295
     $ cp bootloader_lk.tar ../Openwrt/target/linux/rtd1295/image/image_file-r160868/packages/omv/
 
-Build target image
+编译安装包
 
     $ ./build_android.sh build
     $ ./build_openwrt.sh build
 
-Target android image is Openwrt/bin/rtd1295-glibc/install.img, please read the [bpi wiki](http://wiki.banana-pi.org/Getting_Started_with_W2#Install_Android_image) to get how to flash the image to board.
+安装包输出目录: Openwrt/bin/rtd1295-glibc/install.img; android 编译输出目录:android/out/target/product/kylin32
+
+---------
+
+**定制参数**
+
+    $ cd Openwrt
+    $ make menuconfig
+
+会弹出编译定制框
