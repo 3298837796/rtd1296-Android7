@@ -14,6 +14,7 @@ include $(CURDIR)/audiofw.mk
 BANANAPI:=$(if $(findstring bananapi,$(PROFILE)),true,false)
 SAOLA:=$(if $(findstring saola,$(PROFILE)),true,false)
 CCBOX:=$(if $(findstring ccbox,$(PROFILE)),true,false)
+TARAX:=$(if $(findstring tarax,$(PROFILE)),true,false)
 
 ifeq ($(BANANAPI), true)
     $(warning "bananapi rtd-1296 chip selected")
@@ -24,6 +25,9 @@ else ifeq ($(CCBOX), true)
 else ifeq ($(SAOLA), true)
     $(warning "saola rtd-1296 chip selected")
     RTK_CHIP:=rtd-1296
+else ifeq ($(TARAX), true)
+    $(warning "tarax rtd-1296 chip selected")
+    RTK_CHIP:=rtd-1296	
 else
     $(warning "giraffe rtd-1295 chip selected") 
     RTK_CHIP:=rtd-1295
